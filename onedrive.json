@@ -4,7 +4,7 @@
             "Class": ":internet",
             "ExtraNames": [
             ],
-            "Icon": "folder-onedrive",
+            "Icon": "im-msn",
             "X-DocPath": "kioslave5/onedrive/index.html",
             "deleteRecursive": true,
             "deleting": true,

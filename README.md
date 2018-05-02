@@ -1,12 +1,12 @@
 https://community.kde.org/KIO_OneDrive
 
-Hello there, lonely wanderer and welcome to the magical land of Microsoft OneDrive!
+KIO-OneDrive (forked from KIO-GDrive) is a KIO Slave to access Microsoft OneDrive.
 
 
 INSTALLATION
 ============
 
-    $ git clone git://anongit.kde.org/kio-onedrive.git
+    $ git clone https://github.com/martijn-schmidt/kio-onedrive.git
     $ cd kio-onedrive
     $ mkdir build && cd build
     $ cmake -DCMAKE_INSTALL_PREFIX=`qtpaths --install-prefix` ..

@@ -236,7 +236,7 @@ KIO::UDSEntry KIOOneDrive::accountToUDSEntry(const QString &accountNAme)
     entry.insert(KIO::UDSEntry::UDS_FILE_TYPE, S_IFDIR);
     entry.insert(KIO::UDSEntry::UDS_SIZE, 0);
     entry.insert(KIO::UDSEntry::UDS_ACCESS, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-    entry.insert(KIO::UDSEntry::UDS_ICON_NAME, QStringLiteral("folder-onedrive"));
+    entry.insert(KIO::UDSEntry::UDS_ICON_NAME, QStringLiteral("im-msn"));
 
     return entry;
 }

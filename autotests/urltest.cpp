@@ -46,33 +46,33 @@ void UrlTest::testOneDriveUrl_data()
             << QStringList();
 
     QTest::newRow("account root url")
-            << QUrl(QStringLiteral("onedrive:///foo@gmail.com"))
-            << QStringLiteral("foo@gmail.com")
+            << QUrl(QStringLiteral("onedrive:///foo@outlook.com"))
+            << QStringLiteral("foo@outlook.com")
             << QStringLiteral("/")
-            << QStringList {QStringLiteral("foo@gmail.com")};
+            << QStringList {QStringLiteral("foo@outlook.com")};
 
     QTest::newRow("file in account root")
-            << QUrl(QStringLiteral("onedrive:///foo@gmail.com/bar.txt"))
-            << QStringLiteral("foo@gmail.com")
-            << QStringLiteral("/foo@gmail.com")
-            << QStringList {QStringLiteral("foo@gmail.com"), QStringLiteral("bar.txt")};
+            << QUrl(QStringLiteral("onedrive:///foo@outlook.com/bar.txt"))
+            << QStringLiteral("foo@outlook.com")
+            << QStringLiteral("/foo@outlook.com")
+            << QStringList {QStringLiteral("foo@outlook.com"), QStringLiteral("bar.txt")};
 
     QTest::newRow("folder in account root - no trailing slash")
-            << QUrl(QStringLiteral("onedrive:///foo@gmail.com/bar"))
-            << QStringLiteral("foo@gmail.com")
-            << QStringLiteral("/foo@gmail.com")
-            << QStringList {QStringLiteral("foo@gmail.com"), QStringLiteral("bar")};
+            << QUrl(QStringLiteral("onedrive:///foo@outlook.com/bar"))
+            << QStringLiteral("foo@outlook.com")
+            << QStringLiteral("/foo@outlook.com")
+            << QStringList {QStringLiteral("foo@outlook.com"), QStringLiteral("bar")};
     QTest::newRow("folder in account root - trailing slash")
-            << QUrl(QStringLiteral("onedrive:///foo@gmail.com/bar/"))
-            << QStringLiteral("foo@gmail.com")
-            << QStringLiteral("/foo@gmail.com")
-            << QStringList {QStringLiteral("foo@gmail.com"), QStringLiteral("bar")};
+            << QUrl(QStringLiteral("onedrive:///foo@outlook.com/bar/"))
+            << QStringLiteral("foo@outlook.com")
+            << QStringLiteral("/foo@outlook.com")
+            << QStringList {QStringLiteral("foo@outlook.com"), QStringLiteral("bar")};
 
     QTest::newRow("file in subfolder")
-            << QUrl(QStringLiteral("onedrive:///foo@gmail.com/bar/baz.txt"))
-            << QStringLiteral("foo@gmail.com")
-            << QStringLiteral("/foo@gmail.com/bar")
-            << QStringList {QStringLiteral("foo@gmail.com"), QStringLiteral("bar"), QStringLiteral("baz.txt")};
+            << QUrl(QStringLiteral("onedrive:///foo@outlook.com/bar/baz.txt"))
+            << QStringLiteral("foo@outlook.com")
+            << QStringLiteral("/foo@outlook.com/bar")
+            << QStringList {QStringLiteral("foo@outlook.com"), QStringLiteral("bar"), QStringLiteral("baz.txt")};
 }
 
 void UrlTest::testOneDriveUrl()
