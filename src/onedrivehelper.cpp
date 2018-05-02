@@ -20,10 +20,10 @@
 #include "onedrivehelper.h"
 
 #include <KIO/Job>
-#include <KGAPI/Drive/File>
+#include <KGAPI/OneDrive/File>
 #include <KLocalizedString>
 
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 #define VND_GOOGLE_APPS_DOCUMENT        QStringLiteral("application/vnd.google-apps.document")
 #define VND_GOOGLE_APPS_DRAWING         QStringLiteral("application/vnd.google-apps.drawing")
@@ -97,12 +97,12 @@ QString OneDriveHelper::folderMimeType()
     return VND_GOOGLE_APPS_FOLDER;
 }
 
-bool OneDriveHelper::isGDocsDocument(const KGAPI2::Drive::FilePtr &file)
+bool OneDriveHelper::isGDocsDocument(const KGAPI2::OneDrive::FilePtr &file)
 {
     return OneDriveHelper::ConversionMap.contains(file->mimeType());
 }
 
-QUrl OneDriveHelper::convertFromGDocs(KGAPI2::Drive::FilePtr &file)
+QUrl OneDriveHelper::convertFromGDocs(KGAPI2::OneDrive::FilePtr &file)
 {
     const QString originalMimeType = file->mimeType();
     auto convIt = OneDriveHelper::ConversionMap.constFind(originalMimeType);

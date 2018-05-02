@@ -30,21 +30,21 @@
 
 #include <KGAPI/Account>
 #include <KGAPI/AuthJob>
-#include <KGAPI/Drive/About>
-#include <KGAPI/Drive/AboutFetchJob>
-#include <KGAPI/Drive/ChildReference>
-#include <KGAPI/Drive/ChildReferenceFetchJob>
-#include <KGAPI/Drive/ChildReferenceCreateJob>
-#include <KGAPI/Drive/File>
-#include <KGAPI/Drive/FileCopyJob>
-#include <KGAPI/Drive/FileCreateJob>
-#include <KGAPI/Drive/FileModifyJob>
-#include <KGAPI/Drive/FileTrashJob>
-#include <KGAPI/Drive/FileFetchJob>
-#include <KGAPI/Drive/FileFetchContentJob>
-#include <KGAPI/Drive/FileSearchQuery>
-#include <KGAPI/Drive/ParentReference>
-#include <KGAPI/Drive/Permission>
+#include <KGAPI/OneDrive/About>
+#include <KGAPI/OneDrive/AboutFetchJob>
+#include <KGAPI/OneDrive/ChildReference>
+#include <KGAPI/OneDrive/ChildReferenceFetchJob>
+#include <KGAPI/OneDrive/ChildReferenceCreateJob>
+#include <KGAPI/OneDrive/File>
+#include <KGAPI/OneDrive/FileCopyJob>
+#include <KGAPI/OneDrive/FileCreateJob>
+#include <KGAPI/OneDrive/FileModifyJob>
+#include <KGAPI/OneDrive/FileTrashJob>
+#include <KGAPI/OneDrive/FileFetchJob>
+#include <KGAPI/OneDrive/FileFetchContentJob>
+#include <KGAPI/OneDrive/FileSearchQuery>
+#include <KGAPI/OneDrive/ParentReference>
+#include <KGAPI/OneDrive/Permission>
 #include <KIO/AccessManager>
 #include <KIO/Job>
 #include <KLocalizedString>
@@ -53,7 +53,7 @@
 #include <QNetworkReply>
 
 using namespace KGAPI2;
-using namespace Drive;
+using namespace OneDrive;
 
 class KIOPluginForMetaData : public QObject
 {
