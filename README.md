@@ -1,13 +1,13 @@
-https://community.kde.org/KIO_GDrive
+https://community.kde.org/KIO_OneDrive
 
-Hello there, lonely wanderer and welcome to the magical land of Google Drive!
+Hello there, lonely wanderer and welcome to the magical land of Microsoft OneDrive!
 
 
 INSTALLATION
 ============
 
-    $ git clone git://anongit.kde.org/kio-gdrive.git
-    $ cd kio-gdrive
+    $ git clone git://anongit.kde.org/kio-onedrive.git
+    $ cd kio-onedrive
     $ mkdir build && cd build
     $ cmake -DCMAKE_INSTALL_PREFIX=`qtpaths --install-prefix` ..
     $ sudo make install
@@ -15,15 +15,15 @@ INSTALLATION
 
 Now you are ready to use the slave. Either click the "Network" button in Dolphin or run:
 
-    $ kioclient5 exec gdrive:/
+    $ kioclient5 exec onedrive:/
 
 
 KNOWN ISSUES
 ============
 
 GDocs file don't have file size
-  Not our fault, Google Drive API simply does not return filesize of these files.
-  I think it's because they are in the Google Docs format, so the size is irrelevant,
+  Not our fault, Microsoft OneDrive API simply does not return filesize of these files.
+  I think it's because they are in the Microsoft Office format, so the size is irrelevant,
   since only GDocs can open them, and if we convert the files into .ODT or .DOCX or
   whatever else, the size is different (so we would have to measure it manually)
 
@@ -37,4 +37,4 @@ Folders have "Unknown" size
 TODO
 ===========
 
-Open tasks are tracked here: https://phabricator.kde.org/tag/kio_gdrive/
+Open tasks are tracked here: https://phabricator.kde.org/tag/kio_onedrive/
