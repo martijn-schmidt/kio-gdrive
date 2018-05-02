@@ -7,7 +7,6 @@ set(QT_MIN_VERSION 5.2.0)
 set(KF5_MIN_VERSION 5.31.0)
 set(KGAPI_MIN_VERSION 5.5.0)
 set(KACCOUNTS_MIN_VERSION 17.04.0)
-set(QTKEYCHAIN_MIN_VERSION 0.6.0)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Gui
@@ -31,18 +30,17 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 
 find_package(KPimGAPI ${KGAPI_MIN_VERSION} REQUIRED)
 
-find_package(KAccounts ${KACCOUNTS_MIN_VERSION})
-set_package_properties(KAccounts PROPERTIES
-    TYPE RECOMMENDED
-    URL "https://commits.kde.org/kaccounts-integration"
-    PURPOSE "Enables integration with system-wide accounts.")
+set(WITH_ACCOUNTMANAGER KACCOUNTS CACHE STRING "Choose the AccountManager backend for KIO-OneDrive.")
+set_property(CACHE WITH_ACCOUNTMANAGER PROPERTY STRINGS KACCOUNTS)
 
-if (NOT KAccounts_FOUND)
-    find_package(Qt5Keychain ${QTKEYCHAIN_MIN_VERSION} REQUIRED)
-    set_package_properties(Qt5Keychain PROPERTIES
-        URL "https://github.com/frankosterfeld/qtkeychain"
-        PURPOSE "Required for secure storage of accounts secrets.")
-    message(STATUS "Building the QtKeychain backend.")
+if(WITH_ACCOUNTMANAGER STREQUAL "KACCOUNTS")
+    find_package(KAccounts ${KACCOUNTS_MIN_VERSION} REQUIRED)
+    set_package_properties(KAccounts PROPERTIES
+        URL "https://commits.kde.org/kaccounts-integration"
+        PURPOSE "Enables integration with system-wide accounts through the KAccounts backend.")
+    message(STATUS "Building the KAccounts backend.")
+else()
+    message(FATAL_ERROR "FATAL: No AccountManager backend selected!")
 endif()
 
 find_package(Qt5Test QUIET)
@@ -70,7 +68,6 @@ add_subdirectory(doc)
 add_subdirectory(src)
 
 if (KAccounts_FOUND)
-    message(STATUS "Building the KAccounts backend.")
     add_subdirectory(kaccounts)
 endif()
 

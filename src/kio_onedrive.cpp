@@ -29,7 +29,6 @@
 #include <QTemporaryFile>
 
 #include <KGAPI/Account>
-#include <KGAPI/AuthJob>
 #include <KGAPI/OneDrive/About>
 #include <KGAPI/OneDrive/AboutFetchJob>
 #include <KGAPI/OneDrive/ChildReference>
@@ -910,7 +909,8 @@ void KIOOneDrive::del(const QUrl &url, bool isfile)
     const auto onedriveUrl = OneDriveUrl(url);
     const QString accountId = onedriveUrl.account();
 
-    // If user tries to delete the account folder, remove the account from the keychain
+    // If user tries to delete the account folder, remove the account from
+    // the AccountManager backend
     if (onedriveUrl.isAccountRoot()) {
         const KGAPI2::AccountPtr account = getAccount(accountId);
         if (account->accountName().isEmpty()) {
