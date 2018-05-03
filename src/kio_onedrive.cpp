@@ -227,12 +227,12 @@ void KIOOneDrive::openConnection()
     qCDebug(ONEDRIVE) << "Ready to talk to OneDrive";
 }
 
-KIO::UDSEntry KIOOneDrive::accountToUDSEntry(const QString &accountNAme)
+KIO::UDSEntry KIOOneDrive::accountToUDSEntry(const QString &accountName)
 {
     KIO::UDSEntry entry;
 
-    entry.insert(KIO::UDSEntry::UDS_NAME, accountNAme);
-    entry.insert(KIO::UDSEntry::UDS_DISPLAY_NAME, accountNAme);
+    entry.insert(KIO::UDSEntry::UDS_NAME, accountName);
+    entry.insert(KIO::UDSEntry::UDS_DISPLAY_NAME, accountName);
     entry.insert(KIO::UDSEntry::UDS_FILE_TYPE, S_IFDIR);
     entry.insert(KIO::UDSEntry::UDS_SIZE, 0);
     entry.insert(KIO::UDSEntry::UDS_ACCESS, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
